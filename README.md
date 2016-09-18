@@ -1,4 +1,4 @@
-RealClearPolitics poll summaries to your CLI
+#RealClearPolitics poll summaries to your CLI
 
 I wrote this super fast to use in my statusbar
 
