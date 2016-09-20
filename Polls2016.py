@@ -94,6 +94,8 @@ for bit in bits:
     election_type = re.findall( pattern, new_bit )
     if( election_type[0] == "General Election:" ):
     	election_type = "Gen"
+    elif( not election_type[0][:-1] in us_state_abbrev ):
+        election_type = election_type[0][:3]
     else:
     	election_type = us_state_abbrev.get(election_type[0][:-1])
 
