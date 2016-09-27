@@ -70,7 +70,7 @@ prev_get_day = calendar.day_name[two_days_back.weekday()] + ", " + calendar.mont
 
 url_contents = str(urllib.request.urlopen("http://www.realclearpolitics.com/epolls/latest_polls/pres_general/").read())
 
-if url_contents.find(get_today) < 0:  
+if url_contents.find(get_today) < 0:
     first_pos = url_contents.find(get_day)
     second_pos = url_contents.find(prev_get_day)
 elif url_contents.find(get_today):
