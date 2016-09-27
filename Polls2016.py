@@ -83,10 +83,13 @@ pattern = re.compile('(<a .*?(Clinton \+[\d]{1,2}|Trump \+[\d]{1,2}))')
 
 bits = re.findall( pattern, chunk )
 
+index = 0
+
 for bit in bits:
 
 
-    sys.stdout.write( " | " )
+    if( index > 0):
+        sys.stdout.write( " | " )
 
     new_bit = bit[0].replace( "http:", "" )
     new_bit = new_bit.replace( "https:", "" )
@@ -108,5 +111,7 @@ for bit in bits:
     split_result = bit[1].split(" ")
     result = split_result[0][:2] + split_result[1]
     sys.stdout.write( election_type + " " + poll_chunk + ", " + result )
+
+    index += 1
 
 print()
